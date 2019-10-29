@@ -359,7 +359,7 @@ module.exports = function(webpackEnv) {
                 ignore: process.env.EXTEND_ESLINT === 'true',
                 baseConfig: (() => {
                   // We allow overriding the config only if the env variable is set
-                  if (process.env.EXTEND_ESLINT === 'true') {
+                  // if (process.env.EXTEND_ESLINT === 'true') {
                     const eslintCli = new eslint.CLIEngine();
                     let eslintConfig;
                     try {
@@ -371,11 +371,11 @@ module.exports = function(webpackEnv) {
                       process.exit(1);
                     }
                     return eslintConfig;
-                  } else {
-                    return {
-                      extends: [require.resolve('eslint-config-react-app')],
-                    };
-                  }
+                  // } else {
+                  //   return {
+                  //     extends: [require.resolve('eslint-config-react-app')],
+                  //   };
+                  // }
                 })(),
                 useEslintrc: true,
                 // @remove-on-eject-end
